@@ -4,3 +4,10 @@
   integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
   crossorigin="anonymous"
 />
+<!--the form below enables us to search github -->
+<form action="" class="search-form">
+	<div class="form-group">
+		<input type="text" class="form-control" placeholder="Enter GitHub username" [(ngModel)]="username" name="username" (keyup)="findProfile()">
+	</div>
+</form>
+<!--end of form -->
