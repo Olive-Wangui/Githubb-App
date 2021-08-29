@@ -8,20 +8,21 @@ import { UserService } from '../service/user.service'
 })
 export class SearchComponent implements OnInit {
 
-  profile:any[];
-  repos:any[];
-  username:string;
+  profile: any['typeof name'] = [];
+  repos: any[] = [];
+  username!: string;
+  location!: string;
 
   constructor(private userService: UserService) {
 
     this.userService.updateProfile(this.username);
-    this.userService.getProfileInfo().subscribe(profile => {
+    this.userService.getProfileInfo().subscribe((profile: any[]) => {
       console.log(profile);
 
       this.profile = profile;
     });
 
-    this.userService.getProfileRepos().subscribe(repos => {
+    this.userService.getProfileRepos().subscribe((repos: any[]) => {
       console.log(repos);
       this.repos = repos;
     })
@@ -30,13 +31,13 @@ export class SearchComponent implements OnInit {
 
    findProfile() {
      this.userService.updateProfile(this.username);
-     this.userService.getProfileInfo().subscribe(profile => {
+     this.userService.getProfileInfo().subscribe((profile: any[]) => {
        console.log(profile);
 
        this.profile = profile;
      });
 
-     this.userService.getProfileRepos().subscribe(repos => {
+     this.userService.getProfileRepos().subscribe((repos: any[]) => {
        console.log(repos);
        this.repos = repos;
      });
