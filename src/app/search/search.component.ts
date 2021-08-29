@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SearchService } from '../services/search.service'
+import { UserService } from '../service/user.service'
 
 @Component({
   selector: 'app-search',
@@ -12,7 +12,7 @@ export class SearchComponent implements OnInit {
   repos:any[];
   username:string;
 
-  constructor(private searchService: searchService) {
+  constructor(private searchService: UserService) {
 
    }
 
