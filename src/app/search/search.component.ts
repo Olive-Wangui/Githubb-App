@@ -8,7 +8,13 @@ import { SearchService } from '../services/search.service'
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  profile:any[];
+  repos:any[];
+  username:string;
+
+  constructor(private searchService: searchService) {
+
+   }
 
   ngOnInit(): void {
   }
