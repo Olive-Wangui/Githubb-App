@@ -12,7 +12,19 @@ export class SearchComponent implements OnInit {
   repos:any[];
   username:string;
 
-  constructor(private searchService: UserService) {
+  constructor(private userService: UserService) {
+
+    this.userService.updateProfile(this.username);
+    thus.userService.getProfileInfo().subscribe(profile => {
+      console.log(profile);
+
+      this.profile = profile;
+    });
+
+    this.userService.getProfileRepos().subscribe(repos => {
+      console.log(repos);
+      this.repos = repos;
+    })
 
    }
 
