@@ -10,5 +10,8 @@ export class UserService {
   private clientId ='cad08ebafb9bb94cc353';
   private clientsecret ='21ae41656595ef9e5b84cf04c53238d8c4aaabf7';
 
-  constructor() { }
+  constructor(private http:Http) {
+    console.log("User service is now running!");
+    this.username = "Olive";
+   }
 }
