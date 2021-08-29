@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import { UserService } from './service/user.service';
-import { HttpHeaders } from '@angular/common//http';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { HttpHeaders } from '@angular/common//http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpHeaders
+    HttpClientModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

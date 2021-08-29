@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpHeaders } from '@angular/common/http';
+import { Http, Headers } from '@angular/http';
 import { map } from 'rxjs/operators';
 
 @Injectable({
@@ -8,10 +8,10 @@ import { map } from 'rxjs/operators';
 export class UserService {
 
   private username:string;
-  private clientId ='cad08ebafb9bb94cc353';
+  private clientid ='cad08ebafb9bb94cc353';
   private clientsecret ='21ae41656595ef9e5b84cf04c53238d8c4aaabf7';
 
-  constructor(private http:HttpHeaders) {
+  constructor(private http:Http) {
     console.log("User service is now running!");
     this.username = "Olive";
    }
@@ -26,7 +26,7 @@ export class UserService {
      .pipe(map(res => res.json()));
    }
 
-   updateProfile(usernname:string) {
+   updateProfile(username:string) {
      this.username = username;
    }
 }
