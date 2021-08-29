@@ -15,7 +15,7 @@ export class SearchComponent implements OnInit {
   constructor(private userService: UserService) {
 
     this.userService.updateProfile(this.username);
-    thus.userService.getProfileInfo().subscribe(profile => {
+    this.userService.getProfileInfo().subscribe(profile => {
       console.log(profile);
 
       this.profile = profile;
@@ -26,6 +26,17 @@ export class SearchComponent implements OnInit {
       this.repos = repos;
     })
 
+   }
+
+   findProfile() {
+     this.userService.updateProfile(this.username);
+     this.userService.getProfileInfo().subscribe(profile => {
+       console.log(profile);
+
+       this.profile = profile;
+     });
+
+     
    }
 
   ngOnInit(): void {
