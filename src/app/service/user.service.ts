@@ -15,4 +15,11 @@ export class UserService {
     console.log("User service is now running!");
     this.username = "Olive";
    }
+
+   getProfileInfo() {
+     return this.http.get("https://api.github.com/users/" + this.username + "?client_id=" + this.clientid + "&client_secret=" + this.clientsecret)
+     .pipe(map(res => res.json()));
+   }
+
+   
 }
