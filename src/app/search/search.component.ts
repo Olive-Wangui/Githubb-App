@@ -36,6 +36,10 @@ export class SearchComponent implements OnInit {
        this.profile = profile;
      });
 
+     this.userService.getProfileRepos().subscribe(repos => {
+       console.log(repos);
+       this.repos = repos;
+     });
      
    }
 
