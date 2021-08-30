@@ -6,11 +6,13 @@ import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './search/search.component';
 import { UserService } from './service/user.service';
 import { HttpClientModule} from '@angular/common/http';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SearchComponent
+    SearchComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

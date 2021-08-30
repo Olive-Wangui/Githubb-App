@@ -1,0 +1,13 @@
+.search.form {
+  padding-top: 30px;
+}
+.panel-body {
+  color: rgb(72, 255, 0);
+  font-size: large;
+}
+.panel-title {
+    color: black;
+}
+.label {
+    color: whitesmoke;
+}
