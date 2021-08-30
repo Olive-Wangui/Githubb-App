@@ -1,6 +1,6 @@
 export interface User { 
     profile: any['typeof name'];
-  repos: any[];
+  repos: any;
   username: string;
   location: string;
 }

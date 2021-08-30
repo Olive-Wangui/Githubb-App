@@ -23,9 +23,9 @@ export class SearchComponent implements OnInit {
       this.profile = profile;
     });
 
-    this.userService.getProfileRepos().subscribe(repos => {
+    this.userService.getProfileRepos().subscribe((repos: any[1]) => {
       console.log(repos);
-      this.repos[1] = repos;
+      this.repos = repos;
     })
 
    }
@@ -38,9 +38,9 @@ export class SearchComponent implements OnInit {
        this.profile = profile;
      });
 
-     this.userService.getProfileRepos().subscribe(repos => {
+     this.userService.getProfileRepos().subscribe((repos: any[1]) => {
        console.log(repos);
-       this.repos[1] = repos;
+       this.repos = repos;
      });
      
    }
