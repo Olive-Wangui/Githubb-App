@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { User } from '../service/user.service';
+import { User } from '../interface/user';
 
 @Injectable({
   providedIn: 'root'
@@ -20,13 +20,15 @@ export class UserService {
    }
 
    getProfileInfo(): Observable<User[]> {
-  	return this.http.get<User[]>("https://api.github.com/users/" + this.username + "?client_id=" + this.clientid + "&client_secret=" + this.clientsecret);
+  	return this.http.get<User[]>("https://api.github.com/users/" + this.username + "?client_id=" + this.clientid + "&client_secret=" + this.clientsecret)
+    .pipe();
   }
 
   //GET REPOS FROM GithubSearch
   getProfileRepos(): Observable<User> {
   
-    return this.http.get<User>('https://api.github.com/users/' + this.username + '/repos?client_id=' + this.clientid + '&client_secret=' + this.clientsecret);
+    return this.http.get<User>('https://api.github.com/users/' + this.username + '/repos?client_id=' + this.clientid + '&client_secret=' + this.clientsecret)
+    .pipe();
   }
 
   //the code below is for username

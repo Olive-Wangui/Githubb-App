@@ -1,3 +1,4 @@
+import { analyzeNgModules } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../service/user.service'
 
@@ -22,9 +23,9 @@ export class SearchComponent implements OnInit {
       this.profile = profile;
     });
 
-    this.userService.getProfileRepos().subscribe((repos: any[]) => {
+    this.userService.getProfileRepos().subscribe(repos => {
       console.log(repos);
-      this.repos = repos;
+      this.repos[1] = repos;
     })
 
    }
@@ -37,9 +38,9 @@ export class SearchComponent implements OnInit {
        this.profile = profile;
      });
 
-     this.userService.getProfileRepos().subscribe((repos: any[]) => {
+     this.userService.getProfileRepos().subscribe(repos => {
        console.log(repos);
-       this.repos = repos;
+       this.repos[1] = repos;
      });
      
    }
